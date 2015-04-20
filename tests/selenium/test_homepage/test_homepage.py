@@ -6,8 +6,9 @@ class HomePage(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()
-        self.driver.get("http://nicolesmith.nyc")
-        #self.driver.get("http://127.0.0.1:4747")
+        #self.driver.get("http://nicolesmith.nyc")
+        self.driver.get("http://127.0.0.1:4747")
+
     def test_title_on_homepage(self):
         main_page = page.HomePage(self.driver)
         assert main_page.is_title_matches(), "homepage title doesn't match."
@@ -22,25 +23,3 @@ class HomePage(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-
-
-"""
-class HomePage(unittest.TestCase):
-
-    def setUp(self):
-        self.driver = webdriver.Firefox()
-        self.driver.implicitly_wait(10)
-        self.driver.get("http://nicolesmith.nyc")
-
-    def test_title(self):
-        self.assertIn("Hello", self.driver.title)
-
-    def test_links(self):
-
-        for url in self.driver.find_elements_by_tag_name('a'):
-            self.driver.click(url)
-
-    def tearDown(self):
-        self.driver.close()
-"""
