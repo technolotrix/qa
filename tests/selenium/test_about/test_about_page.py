@@ -38,6 +38,12 @@ class AboutPage(unittest.TestCase):
     def test_click_resume(self):
         return self.about_page.click_resume(), "link to resume is broken"
 
+    def test_click_contact_me(self):
+        return self.about_page.click_contact_me(), "link to contact me page is broken in FAQ"
+
+    def test_click_html5up_backlink(self):
+        return self.about_page.click_html5up_backlink(), "backlink to html5up in FAQ is broken"
+
     ######## FOOTER STUFF ########
 
     def test_click_github(self):

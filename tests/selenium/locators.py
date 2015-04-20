@@ -5,8 +5,11 @@ class HomePageLocators(object):
     pass   
 
 class AboutPageLocators(object):
+
     GET_RESUME_BUTTON = (By.CSS_SELECTOR, '#main > header > ul > li > a')
-    
+    GET_HTML5UP_BACKLINK = (By.CSS_SELECTOR, '#main > section.wrapper.style4.container > div > section > p:nth-child(19) > a')
+    GET_CONTACT_ME_LINK = (By.CSS_SELECTOR, '#main > section.wrapper.style4.container > div > section > p:nth-child(15) > a')
+
 
 class PageHeaderLocators(object):
 

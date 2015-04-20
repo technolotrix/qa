@@ -86,7 +86,17 @@ class AboutPage(BasePage):
         element.click()
         return "http://html5up.net" in self.driver.current_url
 
+    def click_html5up_backlink(self):
+        element = self.driver.find_element(*AboutPageLocators.GET_HTML5UP_BACKLINK)
+        element.click()
+        return "http://html5up.net" in self.driver.current_url
+
     def click_resume(self):
         element = self.driver.find_element(*AboutPageLocators.GET_RESUME_BUTTON)
         element.click()
         return "Resume Consulting" in self.driver.page_source
+
+    def click_contact_me(self):
+        element = self.driver.find_element(*AboutPageLocators.GET_CONTACT_ME_LINK)
+        element.click()
+        return "/contact" in self.driver.current_url
