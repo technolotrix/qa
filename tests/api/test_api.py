@@ -5,8 +5,8 @@ import nose
 class TestApi():
 
     def setUp(self):
-        #self.baseurl = 'http://nicolesmith.nyc'
-        self.baseurl = 'http://127.0.0.1:4747'
+        self.baseurl = 'http://nicolesmith.nyc'
+        #self.baseurl = 'http://127.0.0.1:4747'
         
     def tearDown(self):
         pass
