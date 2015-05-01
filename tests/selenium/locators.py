@@ -6,7 +6,8 @@ class HomePageLocators(object):
 
 class AboutPageLocators(object):
 
-    GET_RESUME_BUTTON = (By.CSS_SELECTOR, '#main > header > ul > li > a')
+    GET_RESUME_BUTTON = (By.CSS_SELECTOR, '#main > header > ul > li:nth-child(2) > a')
+    GET_RESUMATOR_BUTTON = (By.CSS_SELECTOR, '#main > header > ul > li:nth-child(3) > a')
     GET_HTML5UP_BACKLINK = (By.CSS_SELECTOR, '#main > section.wrapper.style4.container > div > section > p:nth-child(19) > a')
     GET_CONTACT_ME_LINK = (By.CSS_SELECTOR, '#main > section.wrapper.style4.container > div > section > p:nth-child(15) > a')
 

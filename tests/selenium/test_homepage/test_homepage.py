@@ -1,6 +1,8 @@
 import unittest
 from selenium import webdriver
 import page
+from footer.test_footer import Footer
+from header.test_header import Header
 
 class HomePage(unittest.TestCase):
 
@@ -10,52 +12,41 @@ class HomePage(unittest.TestCase):
         self.driver.get("http://127.0.0.1:4747")
         self.homepage = page.HomePage(self.driver)
 
+    def tearDown(self):
+        self.driver.close()
+
+class HeaderTests(unittest.TestCase, Header):
+
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+        #self.driver.get("http://nicolesmith.nyc")
+
+        self.test_pages = ["/about", "/", "contact", "/resumator" "/projects", "/services"]
+
     ######## HEADER STUFF ########
 
-    def test_title_on_homepage(self):
-        assert self.homepage.is_title_matches(), "Home page title doesn't match"
+    def test_header(self):
 
-    def test_click_get_quote(self):
-        assert self.homepage.click_quote_button(), "link to contact page is broken"
+        for url in self.test_pages:
+            yield Header, url, self.driver
 
-    def test_click_home_button(self):
-        assert self.homepage.click_home_button(), "home button does not go to homepage"
+    def tearDown(self):
+        self.driver.close()
 
-    @unittest.skip("Needs fixing.")
-    def test_click_about_link(self):
-        assert self.homepage.click_projects_link(), "About link does not go to about page"
+class FooterTests(unittest.TestCase, Footer):
 
-    @unittest.skip("Needs fixing.")
-    def test_click_projects_link(self):
-        assert self.homepage.click_projects_link(), "projects link does not go to projects page"
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+        #self.driver.get("http://nicolesmith.nyc")
 
-    @unittest.skip("Needs fixing.")
-    def test_click_services_link(self):
-        assert self.homepage.click_projects_link(), "services link does not go to services page"
-
-    ######## PAGE SPECIFIC STUFF ########
-
-    
+        self.test_pages = ["/about", "/", "contact", "/resumator" "/projects", "/services"]
 
     ######## FOOTER STUFF ########
 
-    def test_click_github(self):
-        assert self.homepage.click_github_button(), "link to github is broken"
+    def test_footer(self):
 
-    def test_click_linkedin(self):
-        assert self.homepage.click_linkedin_button(), "link to linkedin is broken"
-
-    def test_click_gplus(self):
-        assert self.homepage.click_gplus_button(), "link to google plus is broken"
-
-    def test_click_twitter(self):
-        assert self.homepage.click_twitter_button(), "link to twitter is broken"
-
-    def test_click_html5up(self):
-        assert self.homepage.click_html5up_link(), "link to html5up template owner is broken"
-
-    def test_copyright_on_homepage(self):
-        assert self.homepage.is_copyright_matches(), "Home page has wrong copyright"
+        for url in self.test_pages:
+            yield Footer, url, self.driver
 
     def tearDown(self):
         self.driver.close()

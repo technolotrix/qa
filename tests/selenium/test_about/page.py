@@ -23,7 +23,7 @@ class BasePage(object):
 class AboutPage(BasePage):
 
     def is_title_matches(self):
-        return "Goodbye, world!" in self.driver.title
+        return "About LNS Consulting" in self.driver.title
 
     def is_copyright_matches(self):
         return "Lauren Nicole Smith 2015" in self.driver.page_source
@@ -90,6 +90,11 @@ class AboutPage(BasePage):
         element = self.driver.find_element(*AboutPageLocators.GET_HTML5UP_BACKLINK)
         element.click()
         return "http://html5up.net" in self.driver.current_url
+
+    def click_resumator(self):
+        element = self.driver.find_element(*AboutPageLocators.GET_RESUMATOR_BUTTON)
+        element.click()
+        return "/resumator" in self.driver.current_url
 
     def click_resume(self):
         element = self.driver.find_element(*AboutPageLocators.GET_RESUME_BUTTON)

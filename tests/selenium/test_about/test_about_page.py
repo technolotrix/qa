@@ -38,6 +38,9 @@ class AboutPage(unittest.TestCase):
     def test_click_resume(self):
         return self.about_page.click_resume(), "link to resume is broken"
 
+    def test_click_resumator(self):
+        return self.about_page.click_resumator(), "link to resumator is broken"
+
     def test_click_contact_me(self):
         return self.about_page.click_contact_me(), "link to contact me page is broken in FAQ"
 
