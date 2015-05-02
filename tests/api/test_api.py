@@ -6,7 +6,6 @@ class TestApi():
 
     def setUp(self):
         self.baseurl = 'http://nicolesmith.nyc'
-        #self.baseurl = 'http://127.0.0.1:4747'
         
     def tearDown(self):
         pass
@@ -94,7 +93,59 @@ class TestApi():
 
     def test_contact(self):
 
+<<<<<<< HEAD
         url = self.baseurl + '/contact'
+=======
+    	url = self.baseurl + '/contact'
+    	# GET
+    	get = requests.get(url)
+    	assert get.status_code == 200
+    	# POST
+    	post = requests.post(url, data={})
+    	assert post.status_code == 405
+    	# PUT
+    	put = requests.put(url, data={})
+    	assert put.status_code == 405
+    	# DELETE
+    	delete = requests.delete(url, data={})
+    	assert delete.status_code == 405
+
+    def test_google(self):
+
+        url = self.baseurl + '/google9561f99e9bf3af0a.html'
+        # GET
+        get = requests.get(url)
+        assert get.status_code == 200
+        # POST
+        post = requests.post(url, data={})
+        assert post.status_code == 405
+        # PUT
+        put = requests.put(url, data={})
+        assert put.status_code == 405
+        # DELETE
+        delete = requests.delete(url, data={})
+        assert delete.status_code == 405
+
+    def test_sitemap(self):
+
+        url = self.baseurl + '/sitemap.xml'
+        # GET
+        get = requests.get(url)
+        assert get.status_code == 200
+        # POST
+        post = requests.post(url, data={})
+        assert post.status_code == 405
+        # PUT
+        put = requests.put(url, data={})
+        assert put.status_code == 405
+        # DELETE
+        delete = requests.delete(url, data={})
+        assert delete.status_code == 405
+
+    def test_robots(self):
+
+        url = self.baseurl + '/robots.txt'
+>>>>>>> master
         # GET
         get = requests.get(url)
         assert get.status_code == 200
