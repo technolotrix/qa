@@ -6,8 +6,8 @@ class AboutPage(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()
-        #self.driver.get("http://nicolesmith.nyc")
-        self.driver.get("http://127.0.0.1:4747/about")
+        self.driver.get("http://nicolesmith.nyc")
+        #self.driver.get("http://127.0.0.1:4747/about")
         self.about_page = page.AboutPage(self.driver)
 
     ######## HEADER STUFF ########

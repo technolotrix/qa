@@ -7,6 +7,7 @@ class HomePage(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
         self.driver.get("http://nicolesmith.nyc")
+        
     def test_title_on_homepage(self):
         main_page = page.HomePage(self.driver)
         assert main_page.is_title_matches(), "homepage title doesn't match."

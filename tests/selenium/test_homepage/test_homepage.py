@@ -8,8 +8,8 @@ class HomePage(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()
-        #self.driver.get("http://nicolesmith.nyc")
-        self.driver.get("http://127.0.0.1:4747")
+        self.driver.get("http://nicolesmith.nyc")
+        #self.driver.get("http://127.0.0.1:4747")
         self.homepage = page.HomePage(self.driver)
 
     def tearDown(self):

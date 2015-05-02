@@ -6,8 +6,8 @@ class Footer(object):
 
     def setUp(self, page_url, driver):
         self.driver = driver
-        #self.driver.get("http://nicolesmith.nyc")
-        self.page_url = "http://127.0.0.1:4747/{0}".format(page_url)
+        self.driver.get("http://nicolesmith.nyc")
+        #self.page_url = "http://127.0.0.1:4747/{0}".format(page_url)
         self.driver.get(self.page_url)
         self.footer = page.FooterPage(self.driver)
 
