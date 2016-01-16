@@ -8,7 +8,7 @@ from locators import PageFooterLocators
 
 """
 TODO:
-1) Consider creating "header object" and "footer object" instead of 
+1) Consider creating "header object" and "footer object" instead of
 combining header and footer into each page object
 
 """
